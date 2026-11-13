@@ -1,0 +1,19 @@
+{% extends 'books/base.html' %}
+{% block content %}
+<h1>{{ book.title }}</h1>
+<h3>{{ book.author }}</h3>
+<p>{{ book.description }}</p>
+<h3>{{ book.price }}</h3>
+<h3>
+    <a href="{% url 'books:category_detail' book.category.slug %}">
+        {{ book.category.name }}
+    </a>
+</h3>
+<p>В наявності: {{ book.stock }} шт.</p>
+<a href="{% url 'books:book_update' book.id %}" class="btn btn-primary">
+    Редагувати книгу
+</a>
+<a href="{% url 'books:book_delete' book.id %}" class="btn btn-danger">
+    Видалити книгу
+</a>
+{% endblock %}

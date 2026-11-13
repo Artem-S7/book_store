@@ -1,0 +1,12 @@
+{% extends 'books/base.html' %}
+{% block content %}
+<h2>Ви впевнені, що хочете видалити книгу "{{ object.title }}"?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit"
+            class="btn btn-danger"
+            onclick="return confirm('Точно видалити цю книгу?')">
+        Видалити
+    </button>
+</form>
+{% endblock %}

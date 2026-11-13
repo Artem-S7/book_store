@@ -15,7 +15,7 @@ class Book(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=13, verbose_name='Ціна')
     description = models.TextField(verbose_name='Опис')
     stock = models.IntegerField(verbose_name='Кількість')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, verbose_name='Категорія')
     class Meta:
         verbose_name = 'Книга'
         verbose_name_plural = 'Книги'
